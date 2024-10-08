@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rui - プログラミングを学ぼう</title>
+  <link rel="stylesheet" href="https://a177777.github.io/rui/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Rui</h1>
+        <nav>
+            <ul>
+                <li><a href="css.html">CSSを覚えよう</a></li>
+                <li><a href="html.html">HTMLを覚えよう</a></li>
+                <li><a href="javascript.html">JavaScriptを覚えよう</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>ようこそ、Ruiへ！</h2>
+            <p class="intro-text">ここはあなたのプログラミングの冒険の始まりです。<br>
+            楽しく学びながら、新しいスキルを手に入れましょう！<br>
+            あなたのアイデアを形にするための道を、一緒に歩んでいきます。</p>
+            <div class="progress">
+                <h3>サーバー完成まで: <span id="completion-percentage">20%</span></h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 20%;"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="learning-progress">
+            <h3>学習進行状況</h3>
+            <div class="progress">
+                <h4>HTML <span class="progress-percentage">50%</span></h4>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="progress">
+                <h4>CSS <span class="progress-percentage">40%</span></h4>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%;"></div>
+                </div>
+            </div>
+            <div class="progress">
+                <h4>JavaScript <span class="progress-percentage">30%</span></h4>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 30%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recommended-books">
+            <h3>おすすめの本</h3>
+            <div class="books-container">
+                <div class="book">
+                    <img src="https://via.placeholder.com/100" alt="HTML & CSS: Design and Build Websites">
+                    <div class="book-info">
+                        <a href="https://example.com/html-css-book" target="_blank">「HTML & CSS: Design and Build Websites」</a>
+                        <p>この本では、HTMLとCSSの基本を学び、ウェブサイトを構築するための技術を習得できます。</p>
+                    </div>
+                </div>
+                <div class="book">
+                    <img src="https://via.placeholder.com/100" alt="JavaScript: The Good Parts">
+                    <div class="book-info">
+                        <a href="https://example.com/javascript-book" target="_blank">「JavaScript: The Good Parts」</a>
+                        <p>JavaScriptの重要な概念を学ぶことで、効率的なプログラミングが可能になります。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video-player">
+            <h3>僕の動画</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">利用規約</a>
+            <a href="privacy.html">プライバシーポリシー</a>
+            <a href="contact.html">お問い合わせ</a>
+        </div>
+        <p>© 2024 Rui. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
