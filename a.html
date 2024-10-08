@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLとCSSの詳細ガイド</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        section {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        pre {
+            background: #e7e7e7;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+        code {
+            background: #e7e7e7;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        ul {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTMLとCSSの詳細ガイド</h1>
+    </header>
+    <main>
+        <section>
+            <h2>1. HTMLとは？</h2>
+            <p>HTML（HyperText Markup Language）は、ウェブページの構造を定義するためのマークアップ言語です。ブラウザはHTMLを解釈して、テキスト、画像、リンク、その他のコンテンツを表示します。</p>
+        </section>
+
+        <section>
+            <h2>2. HTMLの基本構造</h2>
+            <p>HTML文書は、以下のような基本的な構造を持っています。</p>
+            <pre><code>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ページタイトル</title>
+</head>
+<body>
+    <header>
+        <h1>ウェブサイトのタイトル</h1>
+    </header>
+    <main>
+        <section>
+            <h2>セクションタイトル</h2>
+            <p>ここに内容が入ります。</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 あなたのサイト名</p>
+    </footer>
+</body>
+</html>
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>3. HTMLの要素</h2>
+            <p>HTMLはさまざまな要素を提供し、文書の構造を作成します。以下は、いくつかの重要な要素の説明です。</p>
+            <ul>
+                <li><strong>見出し要素:</strong> <code>&lt;h1&gt;</code>から<code>&lt;h6&gt;</code>までの見出しを定義します。<code>&lt;h1&gt;</code>が最も重要で、<code>&lt;h6&gt;</code>が最も重要度が低いです。</li>
+                <li><strong>段落要素:</strong> <code>&lt;p&gt;</code>は段落を表し、テキストを意味的にグループ化します。</li>
+                <li><strong>リンク要素:</strong> <code>&lt;a href="URL"&gt;リンクテキスト&lt;/a&gt;</code>で外部リンクや内部リンクを作成します。</li>
+                <li><strong>画像要素:</strong> <code>&lt;img src="画像のURL" alt="代替テキスト"&gt;</code>で画像を表示します。</li>
+                <li><strong>リスト:</strong>
+                    <ul>
+                        <li>順序付きリスト: <code>&lt;ol&gt;&lt;li&gt;アイテム1&lt;/li&gt;&lt;/ol&gt;</code></li>
+                        <li>順序なしリスト: <code>&lt;ul&gt;&lt;li&gt;アイテム1&lt;/li&gt;&lt;/ul&gt;</code></li>
+                    </ul>
+                </li>
+                <li><strong>テーブル:</strong>
+                    <pre><code>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;見出し1&lt;/th&gt;
+        &lt;th&gt;見出し2&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;データ1&lt;/td&gt;
+        &lt;td&gt;データ2&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                    </code></pre>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. HTMLの属性</h2>
+            <p>HTML要素は属性を持つことができ、要素の動作や表示を変更します。以下は一般的な属性の例です。</p>
+            <ul>
+                <li><strong>id:</strong> 要素を一意に識別するための名前を指定します。</li>
+                <li><strong>class:</strong> 複数の要素に共通のスタイルを適用するための名前を指定します。</li>
+                <li><strong>style:</strong> インラインスタイルを要素に直接適用するためのCSSプロパティを指定します。</li>
+                <li><strong>href:</strong> リンクの行先を指定します。<code>&lt;a href="URL"&gt;リンク&lt;/a&gt;</code>のように使用します。</li>
+                <li><strong>src:</strong> 画像などの外部リソースのURLを指定します。<code>&lt;img src="画像URL"&gt;</code>のように使用します。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. CSSの基本</h2>
+            <p>CSS（Cascading Style Sheets）は、HTML要素の見た目を定義するためのスタイルシート言語です。色、フォント、レイアウトなどを指定することができます。</p>
+            <pre><code>
+/* CSSの基本的な書き方 */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+p {
+    line-height: 1.5;
+}
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>6. CSSのセレクタ</h2>
+            <p>CSSでは、さまざまなセレクタを使ってHTML要素を指定します。</p>
+            <ul>
+                <li><strong>要素セレクタ:</strong> <code>h1 { color: red; }</code>で<h1>要素の色を赤にします。</li>
+                <li><strong>クラスセレクタ:</strong> <code>.classname { color: blue; }</code>で、特定のクラスを持つ要素の色を青にします。</li>
+                <li><strong>IDセレクタ:</strong> <code>#idname { color: green; }</code>で、一意のIDを持つ要素の色を緑にします。</li>
+                <li><strong>子セレクタ:</strong> <code>ul > li { margin: 10px; }</code>で、ulの直下のliにマージンを適用します。</li>
+                <li><strong>属性セレクタ:</strong> <code>[type="text"] { border: 1px solid #ccc; }</code>で、type属性が"text"の要素にスタイルを適用します。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>7. CSSのプロパティ</h2>
+            <p>CSSのプロパティを使って、さまざまなスタイルを適用できます。以下は一般的なCSSプロパティの例です。</p>
+            <ul>
+                <li><strong>color:</strong> テキストの色を指定します。</li>
+                <li><strong>background-color:</strong> 背景色を指定します。</li>
+                <li><strong>font-size:</strong> テキストのサイズを指定します。例: <code>font-size: 16px;</code></li>
+                <li><strong>font-family:</strong> 使用するフォントを指定します。例: <code>font-family: 'Arial', sans-serif;</code></li>
+                <li><strong>margin:</strong> 要素の外側の余白を指定します。例: <code>margin: 10px;</code></li>
+                <li><strong>padding:</strong> 要素の内側の余白を指定します。例: <code>padding: 10px;</code></li>
+                <li><strong>border:</strong> 要素の境界線を指定します。例: <code>border: 1px solid #000;</code></li>
+                <li><strong>display:</strong> 要素の表示形式を指定します。例: <code>display: block;</code>や<code>display: inline;</code></li>
+                <li><strong>position:</strong> 要素の位置を指定します。例: <code>position: relative;</code>や<code>position: absolute;</code></li>
+                <li><strong>flex:</strong> フレックスボックスレイアウトを使用するためのプロパティです。例: <code>display: flex;</code></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>8. CSSのレイアウト技術</h2>
+            <p>CSSでは、さまざまなレイアウト技術を使用して、要素の配置や表示を制御できます。</p>
+            <ul>
+                <li><strong>フロート:</strong> <code>float: left;</code>や<code>float: right;</code>を使用して要素を浮かせます。</li>
+                <li><strong>フレックスボックス:</strong> <code>display: flex;</code>を使用して、要素を簡単に整列させます。</li>
+                <li><strong>グリッド:</strong> <code>display: grid;</code>を使用して、2次元レイアウトを作成します。</li>
+                <li><strong>ポジショニング:</strong> <code>position: relative;</code>や<code>position: absolute;</code>を使用して要素の位置を指定します。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>9. メディアクエリ</h2>
+            <p>レスポンシブデザインを実現するために、メディアクエリを使用します。デバイスの幅や高さに応じてスタイルを変更できます。</p>
+            <pre><code>
+@media (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>10. CSSのトランジションとアニメーション</h2>
+            <p>CSSを使用して、要素のスタイルに変化を与えることができます。トランジションやアニメーションを使用して、動的な効果を作成します。</p>
+            <pre><code>
+.button {
+    background-color: blue;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: red;
+}
+            </code></pre>
+            <p>アニメーションの例:</p>
+            <pre><code>
+@keyframes example {
+    from { background-color: blue; }
+    to { background-color: red; }
+}
+
+.animated {
+    animation: example 2s infinite;
+}
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>11. アクセシビリティの考慮</h2>
+            <p>ウェブサイトを作成する際、アクセシビリティを考慮することが重要です。視覚や聴覚に障害のあるユーザーに配慮した設計が求められます。</p>
+            <ul>
+                <li><strong>代替テキスト:</strong> 画像には必ず<code>alt</code>属性を追加し、内容を説明します。</li>
+                <li><strong>キーボードナビゲーション:</strong> すべてのインタラクティブな要素はキーボードで操作できるようにします。</li>
+                <li><strong>色のコントラスト:</strong> テキストと背景のコントラスト比を高く保ち、読みやすさを向上させます。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>12. おわりに</h2>
+            <p>HTMLとCSSは、ウェブデザインの基本であり、これらを理解することで、より魅力的で機能的なウェブサイトを構築できます。学習を続けて、より高度な技術やフレームワーク（例: JavaScript、React、Vueなど）にも挑戦してください。</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 あなたのサイト名</p>
+    </footer>
+</body>
+</html>
