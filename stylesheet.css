@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+#hero {
+    padding: 20px;
+    text-align: center;
+}
+
+.intro-text {
+    font-size: 1.2em; /* テキストサイズを大きくしました */
+    line-height: 1.5; /* 行間を広くして読みやすく */
+}
+
+.progress {
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 20px;
+    background-color: #76c7c0;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+h4 {
+    display: flex;
+    justify-content: space-between; /* 左寄せと右寄せを利用 */
+    text-align: center; /* 中央寄せ */
+}
+
+#recommended-books {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column; /* 縦並びにする */
+    align-items: center; /* 中央寄せ */
+}
+
+.books-container {
+    display: flex;
+    justify-content: center; /* 中央寄せ */
+    flex-wrap: wrap; /* 行を折り返す */
+}
+
+.book {
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    align-items: center; /* 中央寄せ */
+    margin: 10px; /* 余白を追加 */
+}
+
+.book img {
+    width: 100px; /* 本の画像サイズ */
+    height: auto; /* アスペクト比を維持 */
+    margin-bottom: 5px; /* 画像と説明文の間隔 */
+}
+
+.book-info a {
+    text-decoration: none;
+    color: #007bff; /* リンクの色 */
+    font-size: 1.1em; /* フォントサイズを少し大きく */
+}
+
+.book-info a:hover {
+    text-decoration: underline; /* ホバー時のスタイル */
+}
+
+.book-info p {
+    text-align: center; /* 説明文を中央寄せ */
+    font-size: 0.9em; /* 説明文のフォントサイズ */
+    margin: 0; /* マージンをリセット */
+}
+
+#video-player {
+    margin: 20px 0;
+    text-align: center; /* 中央寄せ */
+}
+
+footer {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-links {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
