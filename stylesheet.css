@@ -1,9 +1,16 @@
+/* リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
     color: #333;
-    margin: 0;
-    padding: 0;
+    line-height: 1.6;
+    padding: 20px;
 }
 
 header {
@@ -13,22 +20,30 @@ header {
 }
 
 header h1 {
-    margin: 0;
+    margin-bottom: 10px;
+    font-size: 2.5em;
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav a {
     text-decoration: none;
     color: #333;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #76c7c0;
 }
 
 #hero {
@@ -37,18 +52,23 @@ nav a {
 }
 
 .intro-text {
-    font-size: 1.2em; /* テキストサイズを大きくしました */
-    line-height: 1.5; /* 行間を広くして読みやすく */
+    font-size: 1.2em;
+    margin: 20px 0;
 }
 
 .progress {
     margin: 20px 0;
 }
 
+.progress h3 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
 .progress-bar {
     width: 100%;
     background-color: #e0e0e0;
-    border-radius: 5px;
+    border-radius: 25px;
     overflow: hidden;
 }
 
@@ -59,76 +79,183 @@ nav a {
     transition: width 0.3s ease;
 }
 
-h4 {
+#learning-progress {
+    margin: 40px 0;
+}
+
+#learning-progress h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+#learning-progress .progress {
+    margin: 10px 0;
+}
+
+#learning-progress h4 {
     display: flex;
-    justify-content: space-between; /* 左寄せと右寄せを利用 */
-    text-align: center; /* 中央寄せ */
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
 }
 
 #recommended-books {
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column; /* 縦並びにする */
-    align-items: center; /* 中央寄せ */
+    margin: 40px 0;
+}
+
+#recommended-books h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
 }
 
 .books-container {
     display: flex;
-    justify-content: center; /* 中央寄せ */
-    flex-wrap: wrap; /* 行を折り返す */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .book {
-    display: flex;
-    flex-direction: column; /* 縦並び */
-    align-items: center; /* 中央寄せ */
-    margin: 10px; /* 余白を追加 */
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.book:hover {
+    transform: scale(1.05);
 }
 
 .book img {
-    width: 100px; /* 本の画像サイズ */
-    height: auto; /* アスペクト比を維持 */
-    margin-bottom: 5px; /* 画像と説明文の間隔 */
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
 .book-info a {
     text-decoration: none;
-    color: #007bff; /* リンクの色 */
-    font-size: 1.1em; /* フォントサイズを少し大きく */
+    color: #007bff;
+    font-size: 1.1em;
+    display: block;
+    margin: 10px 0;
 }
 
 .book-info a:hover {
-    text-decoration: underline; /* ホバー時のスタイル */
+    text-decoration: underline;
 }
 
 .book-info p {
-    text-align: center; /* 説明文を中央寄せ */
-    font-size: 0.9em; /* 説明文のフォントサイズ */
-    margin: 0; /* マージンをリセット */
+    font-size: 0.9em;
+    color: #555;
 }
 
 #video-player {
-    margin: 20px 0;
-    text-align: center; /* 中央寄せ */
+    margin: 40px 0;
+    text-align: center;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 footer {
     background-color: #f8f8f8;
+    padding: 20px;
     text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
 }
 
 .footer-links {
-    text-align: center;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 .footer-links a {
     margin: 0 10px;
     text-decoration: none;
     color: #333;
+    transition: color 0.3s ease;
 }
 
+.footer-links a:hover {
+    color: #76c7c0;
+}
+
+footer p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* レスポンシブデザイン */
+
+/* タブレット向け */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .books-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book {
+        width: 80%;
+    }
+}
+
+/* モバイル向け */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        font-size: 1em;
+    }
+
+    .intro-text {
+        font-size: 1em;
+    }
+
+    .progress h3 {
+        font-size: 1em;
+    }
+
+    #learning-progress h3, #recommended-books h3, #video-player h3 {
+        font-size: 1.5em;
+    }
+
+    .book {
+        width: 100%;
+    }
+
+    .book-info a {
+        font-size: 1em;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}
