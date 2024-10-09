@@ -3,731 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSSを覚えよう - Rui</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>CSSを覚えよう</title>
     <style>
-        /* ページ固有のスタイル */
-        .content-section {
-            margin-bottom: 40px;
-        }
-        .content-section h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            color: #76c7c0;
-        }
-        .content-section h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
             color: #333;
         }
-        .content-section p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 10px;
+        h1, h2 {
+            color: #3498db;
         }
-        .content-section pre {
-            background: #f4f4f4;
+        .content {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        pre {
+            background-color: #f0f0f0;
             padding: 10px;
             border-radius: 5px;
-            overflow: auto;
-        }
-        .content-section code {
-            background: #e7e7e7;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-        .content-section ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
-        .content-section img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 20px 0;
-        }
-        .example {
-            background: #fff3cd;
-            padding: 15px;
-            border-left: 5px solid #ffeeba;
-            margin: 20px 0;
-            border-radius: 5px;
+            overflow-x: auto;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>CSSを覚えよう</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="html.html">HTMLを覚えよう</a></li>
-                <li><a href="javascript.html">JavaScriptを覚えよう</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="content">
+        <h1>CSSを覚えよう！</h1>
 
-    <main>
-        <!-- イントロダクション -->
-        <section id="introduction" class="content-section">
-            <h2>1. CSSとは？</h2>
-            <p>CSS（Cascading Style Sheets）は、HTMLで構築されたウェブページの見た目やレイアウトを定義するスタイルシート言語です。HTMLがウェブページの構造を決定するのに対し、CSSはその構造にスタイルを適用し、視覚的なデザインを実現します。</p>
-            <p>CSSを使用することで、以下のようなスタイルを設定できます：</p>
-            <ul>
-                <li>色（テキストや背景の色）</li>
-                <li>フォント（種類、サイズ、スタイル）</li>
-                <li>レイアウト（要素の配置、サイズ）</li>
-                <li>スペース（マージン、パディング）</li>
-                <li>アニメーションやトランジション</li>
-            </ul>
-        </section>
+        <h2>1. CSSとは？</h2>
+        <p>CSS（Cascading Style Sheets）は、HTMLの内容をスタイリングするための言語です。色、フォント、レイアウトなど、ウェブページの外観を制御します。</p>
+        <p>CSSを使うことで、ウェブデザインを簡単に変更したり、一貫性を保ったりできます。たとえば、全ての見出しの色を一度に変更することが可能です。</p>
 
-        <!-- CSSの基本構文 -->
-        <section id="syntax" class="content-section">
-            <h2>2. CSSの基本構文</h2>
-            <p>CSSの基本的な構文は、セレクタと宣言ブロックから構成されます。セレクタはスタイルを適用するHTML要素を指定し、宣言ブロック内にプロパティと値を記述します。</p>
-            <pre><code>
-/* セレクタ */
-h1 {
-    /* プロパティ: 値; */
-    color: blue;
-    font-size: 24px;
-}
-            </code></pre>
-            <p>上記の例では、すべての<h1>要素に対して文字色を青にし、フォントサイズを24ピクセルに設定しています。</p>
-        </section>
+        <h2>2. CSSの基本構文</h2>
+        <p>CSSはセレクタ、プロパティ、値の組み合わせで構成されています。基本的な構文は以下の通りです。</p>
+        <pre><code>selector {
+    property: value;
+}</code></pre>
+        <p>・<strong>セレクタ</strong>: スタイルを適用する要素を指定します。</p>
+        <p>・<strong>プロパティ</strong>: 変更したいスタイルの属性を指定します。</p>
+        <p>・<strong>値</strong>: プロパティに設定する具体的な値を指定します。</p>
 
-        <!-- CSSセレクタ -->
-        <section id="selectors" class="content-section">
-            <h2>3. CSSセレクタ</h2>
-            <p>セレクタは、CSSがスタイルを適用するHTML要素を指定するためのものです。主なセレクタの種類は以下の通りです：</p>
-            <h3>3.1. 要素セレクタ</h3>
-            <p>特定のHTML要素にスタイルを適用します。</p>
-            <pre><code>
-/* すべての<p>要素に適用 */
-p {
-    color: green;
-}
-            </code></pre>
+        <h2>3. CSSの種類</h2>
+        <p>CSSには主に3つの種類があります。</p>
+        <ul>
+            <li><strong>インラインCSS</strong>: HTML要素の中に直接書く方法</li>
+            <pre><code>&lt;h1 style="color: blue;"&gt;Hello World&lt;/h1&gt;</code></pre>
+            <li><strong>内部CSS</strong>: &lt;style&gt;タグ内に書く方法</li>
+            <pre><code>&lt;style&gt;
+    h1 {
+        color: blue;
+    }
+&lt;/style&gt;</code></pre>
+            <li><strong>外部CSS</strong>: 別のCSSファイルをリンクする方法</li>
+            <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+        </ul>
 
-            <h3>3.2. クラスセレクタ</h3>
-            <p>特定のクラスを持つ要素にスタイルを適用します。クラスは複数の要素に共有できます。</p>
-            <pre><code>
-/* .highlightクラスを持つ要素に適用 */
-.highlight {
+        <h2>4. セレクタの種類</h2>
+        <p>セレクタには様々な種類があります。</p>
+        <ul>
+            <li><strong>要素セレクタ</strong>: 要素名で指定</li>
+            <pre><code>p {
+    color: red;
+}</code></pre>
+            <li><strong>クラスセレクタ</strong>: ドット（.）で指定</li>
+            <pre><code>.my-class {
+    font-size: 20px;
+}</code></pre>
+            <li><strong>IDセレクタ</strong>: シャープ（#）で指定</li>
+            <pre><code>#my-id {
     background-color: yellow;
-}
-            </code></pre>
+}</code></pre>
+            <li><strong>属性セレクタ</strong>: 属性に基づいて指定</li>
+            <pre><code>a[href="https://example.com"] {
+    color: blue;
+}</code></pre>
+            <li><strong>擬似クラス</strong>: 特定の状態を持つ要素を指定</li>
+            <pre><code>a:hover {
+    text-decoration: underline;
+}</code></pre>
+            <li><strong>擬似要素</strong>: 特定の部分を指定</li>
+            <pre><code>p::first-line {
+    font-weight: bold;
+}</code></pre>
+        </ul>
 
-            <h3>3.3. IDセレクタ</h3>
-            <p>IDセレクタは、一意のIDを持つ要素にスタイルを適用します。IDは一つの要素にのみ使用すべきです。</p>
-            <pre><code>
-/* #header IDを持つ要素に適用 */
-#header {
-    border-bottom: 2px solid #000;
-}
-            </code></pre>
+        <h2>5. CSSプロパティの例</h2>
+        <p>一般的なCSSプロパティのいくつかを紹介します。</p>
+        <ul>
+            <li><strong>color</strong>: テキストの色を指定</li>
+            <li><strong>background-color</strong>: 背景色を指定</li>
+            <li><strong>font-size</strong>: フォントのサイズを指定</li>
+            <li><strong>margin</strong>: 要素の外側の余白を指定</li>
+            <li><strong>padding</strong>: 要素の内側の余白を指定</li>
+            <li><strong>border</strong>: 要素の境界線を指定</li>
+            <li><strong>width</strong>: 要素の幅を指定</li>
+            <li><strong>height</strong>: 要素の高さを指定</li>
+            <li><strong>display</strong>: 要素の表示方法を指定（例: block, inline, flex）</li>
+            <li><strong>position</strong>: 要素の位置を指定（例: static, relative, absolute, fixed）</li>
+            <li><strong>overflow</strong>: 要素の内容がはみ出した場合の表示方法を指定（例: visible, hidden, scroll）</li>
+        </ul>
 
-            <h3>3.4. 属性セレクタ</h3>
-            <p>特定の属性を持つ要素にスタイルを適用します。</p>
-            <pre><code>
-/* type属性が"button"の<input>要素に適用 */
-input[type="button"] {
-    background-color: #4CAF50;
-    color: white;
-}
-            </code></pre>
-        </section>
-
-        <!-- CSSボックスモデル -->
-        <section id="box-model" class="content-section">
-            <h2>4. CSSボックスモデル</h2>
-            <p>ボックスモデルは、CSSレイアウトの基礎となる概念です。すべてのHTML要素はボックスとして扱われ、以下の4つの部分から構成されます：</p>
-            <ul>
-                <li><strong>コンテンツ:</strong> 要素の実際の内容（テキスト、画像など）。</li>
-                <li><strong>パディング:</strong> コンテンツとボーダーの間のスペース。</li>
-                <li><strong>ボーダー:</strong> 要素の境界線。</li>
-                <li><strong>マージン:</strong> ボーダーと他の要素との間のスペース。</li>
-            </ul>
-            <img src="https://via.placeholder.com/600x400" alt="CSSボックスモデルの図">
-            <p>以下は、ボックスモデルの例です：</p>
-            <pre><code>
-div {
-    width: 200px; /* コンテンツの幅 */
-    padding: 20px; /* パディング */
-    border: 5px solid #333; /* ボーダー */
-    margin: 10px; /* マージン */
-}
-            </code></pre>
-            <p>この例では、<code>div</code>要素の総幅は、コンテンツの幅200pxにパディング40px（左右各20px）、ボーダー10px（左右各5px）、マージン20px（左右各10px）が加わり、<strong>270px</strong>になります。</p>
-        </section>
-
-        <!-- CSSレイアウト技術 -->
-        <section id="layout-techniques" class="content-section">
-            <h2>5. CSSレイアウト技術</h2>
-            <p>CSSには、ウェブページのレイアウトを構築するためのさまざまな技術があります。主な技術は以下の通りです：</p>
-
-            <h3>5.1. フロート（Float）</h3>
-            <p>フロートは、要素を左または右に浮かせて、他の要素をその周りに回り込ませるために使用されます。しかし、フロートは複雑なレイアウトには向いておらず、現在ではFlexboxやGridが主流です。</p>
-            <pre><code>
-/* フロートを使用したレイアウト */
-.left {
-    float: left;
-    width: 50%;
-    background-color: #f0f0f0;
-}
-.right {
-    float: right;
-    width: 50%;
-    background-color: #d0d0d0;
-}
-            </code></pre>
-
-            <h3>5.2. フレックスボックス（Flexbox）</h3>
-            <p>フレックスボックスは、単一の行または列のレイアウトを簡単に構築するための強力なツールです。要素の配置、方向、スペースの分配などを柔軟に制御できます。</p>
-            <pre><code>
-/* フレックスボックスを使用したレイアウト */
-.container {
+        <h2>6. レイアウトの基本</h2>
+        <p>CSSを使った基本的なレイアウト方法について解説します。</p>
+        <ul>
+            <li><strong>ボックスモデル</strong>: 要素の幅、高さ、マージン、パディング、ボーダーの関係を理解することが重要です。</li>
+            <li><strong>フレックスボックス</strong>: レイアウトを柔軟にするためのプロパティ。</li>
+            <pre><code>.container {
     display: flex;
-    justify-content: space-between; /* 要素間のスペースを均等に */
-    align-items: center; /* 要素を垂直方向に中央揃え */
-}
-.item {
-    flex: 1; /* 各要素が均等にスペースを占有 */
-    margin: 10px;
-    padding: 20px;
-    background-color: #f8f8f8;
-}
-            </code></pre>
-
-            <h3>5.3. グリッドレイアウト（Grid Layout）</h3>
-            <p>グリッドレイアウトは、2次元のレイアウトシステムであり、行と列を使用して複雑なレイアウトを簡単に作成できます。</p>
-            <pre><code>
-/* グリッドレイアウトを使用したレイアウト */
-.grid-container {
+    justify-content: space-between; /* 要素の間にスペースを均等に配置 */
+    align-items: center; /* 縦方向に中央揃え */
+}</code></pre>
+            <li><strong>グリッドレイアウト</strong>: 複雑なレイアウトを簡単に作成できます。</li>
+            <pre><code>.grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3列のグリッド */
-    gap: 10px; /* グリッドアイテム間のギャップ */
-}
-.grid-item {
-    background-color: #e0e0e0;
-    padding: 20px;
-    text-align: center;
-}
-            </code></pre>
-
-            <h3>5.4. ポジショニング（Positioning）</h3>
-            <p>ポジショニングプロパティを使用して、要素の位置を正確に制御できます。主なプロパティは以下の通りです：</p>
-            <ul>
-                <li><strong>static:</strong> デフォルトのポジション。要素は通常のフローに従います。</li>
-                <li><strong>relative:</strong> 通常のフローに従いながら、相対的に位置を調整します。</li>
-                <li><strong>absolute:</strong> 最も近いポジションがrelative、absolute、fixed、stickyの親要素に対して絶対的に位置を指定します。</li>
-                <li><strong>fixed:</strong> ビューポートに対して固定された位置に配置され、スクロールしても移動しません。</li>
-                <li><strong>sticky:</strong> スクロールに応じて位置が変わる、相対位置と固定位置の中間的な動作をします。</li>
-            </ul>
-            <pre><code>
-/* ポジショニングの例 */
-.relative-box {
-    position: relative;
-    top: 10px;
-    left: 20px;
-}
-
-.absolute-box {
+    grid-gap: 10px; /* グリッド間の隙間 */
+}</code></pre>
+            <li><strong>絶対位置指定</strong>: 特定の位置に要素を配置できます。</li>
+            <pre><code>.absolute-box {
     position: absolute;
     top: 50px;
-    right: 30px;
-}
+    left: 100px;
+}</code></pre>
+        </ul>
 
-.fixed-box {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+        <h2>7. アニメーションとトランジション</h2>
+        <p>CSSを使ってアニメーションを追加することができます。これにより、ユーザーの注意を引くことができます。</p>
+        <h3>トランジション</h3>
+        <pre><code>.button {
+    transition: background-color 0.3s ease; /* 背景色の変化にトランジションを追加 */
 }
-            </code></pre>
-        </section>
-
-        <!-- CSSタイポグラフィ -->
-        <section id="typography" class="content-section">
-            <h2>6. CSSタイポグラフィ</h2>
-            <p>タイポグラフィは、テキストの見た目を整えるためのスタイル設定です。以下のプロパティを使用して、フォントの種類、サイズ、スタイル、間隔などを調整します。</p>
-            <ul>
-                <li><strong>font-family:</strong> 使用するフォントを指定します。例：<code>font-family: 'Arial', sans-serif;</code></li>
-                <li><strong>font-size:</strong> テキストのサイズを指定します。例：<code>font-size: 16px;</code></li>
-                <li><strong>font-weight:</strong> フォントの太さを指定します。例：<code>font-weight: bold;</code></li>
-                <li><strong>font-style:</strong> フォントのスタイルを指定します。例：<code>font-style: italic;</code></li>
-                <li><strong>line-height:</strong> 行間を調整します。例：<code>line-height: 1.5;</code></li>
-                <li><strong>text-align:</strong> テキストの揃え方を指定します。例：<code>text-align: center;</code></li>
-                <li><strong>text-decoration:</strong> テキストの装飾を指定します。例：<code>text-decoration: underline;</code></li>
-                <li><strong>letter-spacing:</strong> 文字間のスペースを調整します。例：<code>letter-spacing: 2px;</code></li>
-                <li><strong>word-spacing:</strong> 単語間のスペースを調整します。例：<code>word-spacing: 5px;</code></li>
-            </ul>
-            <pre><code>
-/* タイポグラフィの例 */
-h1 {
-    font-family: 'Georgia', serif;
-    font-size: 2.5em;
-    font-weight: bold;
-    text-align: center;
-    color: #333;
-}
-
-p {
-    font-family: 'Arial', sans-serif;
-    font-size: 1em;
-    line-height: 1.6;
-    color: #666;
-}
-            </code></pre>
-        </section>
-
-        <!-- CSSカラーと背景 -->
-        <section id="colors-backgrounds" class="content-section">
-            <h2>7. CSSカラーと背景</h2>
-            <p>カラーと背景のプロパティを使用して、要素の色や背景を設定します。以下のプロパティがよく使用されます：</p>
-            <ul>
-                <li><strong>color:</strong> テキストの色を指定します。例：<code>color: #ff0000;</code></li>
-                <li><strong>background-color:</strong> 要素の背景色を指定します。例：<code>background-color: #f0f0f0;</code></li>
-                <li><strong>background-image:</strong> 背景画像を指定します。例：<code>background-image: url('image.jpg');</code></li>
-                <li><strong>background-size:</strong> 背景画像のサイズを指定します。例：<code>background-size: cover;</code></li>
-                <li><strong>background-repeat:</strong> 背景画像の繰り返し方法を指定します。例：<code>background-repeat: no-repeat;</code></li>
-                <li><strong>background-position:</strong> 背景画像の位置を指定します。例：<code>background-position: center center;</code></li>
-            </ul>
-            <pre><code>
-/* カラーと背景の例 */
-.header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.section {
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    padding: 40px;
-    color: #fff;
-}
-            </code></pre>
-            <div class="example">
-                <h3>例: 背景画像とカラーの組み合わせ</h3>
-                <pre><code>
-body {
-    background-color: #f4f4f4;
-}
-
-.header {
-    background-image: linear-gradient(to right, #76c7c0, #4CAF50);
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-                </code></pre>
-                <p>上記の例では、ヘッダーにグラデーション背景を適用し、テキスト色を白に設定しています。</p>
-            </div>
-        </section>
-
-        <!-- CSSボックスモデルの詳細 -->
-        <section id="box-model-details" class="content-section">
-            <h2>8. CSSボックスモデルの詳細</h2>
-            <p>ボックスモデルは、CSSレイアウトの基本的な概念であり、各要素はボックスとして扱われます。ボックスモデルには以下の4つの部分があります：</p>
-            <ul>
-                <li><strong>コンテンツ:</strong> 要素の実際の内容（テキスト、画像など）。</li>
-                <li><strong>パディング:</strong> コンテンツとボーダーの間のスペース。</li>
-                <li><strong>ボーダー:</strong> 要素の境界線。</li>
-                <li><strong>マージン:</strong> ボーダーと他の要素との間のスペース。</li>
-            </ul>
-            <p>ボックスモデルを理解することで、要素のサイズやスペースを正確に制御できます。</p>
-            <pre><code>
-/* ボックスモデルの例 */
-.box {
-    width: 300px; /* コンテンツの幅 */
-    padding: 20px; /* パディング */
-    border: 5px solid #333; /* ボーダー */
-    margin: 10px; /* マージン */
-    background-color: #f0f0f0; /* 背景色 */
-}
-            </code></pre>
-            <img src="https://via.placeholder.com/600x400" alt="詳細なCSSボックスモデルの図">
-            <p>この例では、<code>.box</code>クラスを持つ要素の総幅は、コンテンツの幅300pxにパディング40px（左右各20px）、ボーダー10px（左右各5px）、マージン20px（左右各10px）が加わり、<strong>370px</strong>になります。</p>
-        </section>
-
-        <!-- レスポンシブデザイン -->
-        <section id="responsive-design" class="content-section">
-            <h2>9. レスポンシブデザイン</h2>
-            <p>レスポンシブデザインは、異なるデバイスや画面サイズに応じてウェブページのレイアウトやスタイルを調整する手法です。これにより、ユーザーはどのデバイスからでも快適にウェブサイトを閲覧できます。</p>
-            <h3>9.1. メディアクエリ</h3>
-            <p>メディアクエリを使用して、特定の条件に基づいてスタイルを適用できます。以下は、画面幅が768px以下の場合にスタイルを変更する例です。</p>
-            <pre><code>
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    .sidebar {
-        display: none;
-    }
-}
-            </code></pre>
-
-            <h3>9.2. フレックスボックスとグリッドの活用</h3>
-            <p>フレックスボックスやグリッドを使用することで、柔軟でレスポンシブなレイアウトを簡単に構築できます。</p>
-            <pre><code>
-/* フレックスボックスの例 */
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.flex-item {
-    flex: 1 1 200px;
-    margin: 10px;
-}
-
-/* グリッドレイアウトの例 */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-}
-            </code></pre>
-            <p>これらのレイアウト技術を使用することで、要素が自動的に再配置され、異なる画面サイズに適応します。</p>
-        </section>
-
-        <!-- CSSアニメーションとトランジション -->
-        <section id="animations-transitions" class="content-section">
-            <h2>10. CSSアニメーションとトランジション</h2>
-            <p>CSSを使用して、要素に動的な効果を追加することができます。アニメーションとトランジションは、ユーザーエクスペリエンスを向上させるための強力なツールです。</p>
-            
-            <h3>10.1. トランジション（Transition）</h3>
-            <p>トランジションを使用すると、ある状態から別の状態への変化をスムーズにアニメーション化できます。</p>
-            <pre><code>
-/* トランジションの例 */
-.button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
 .button:hover {
-    background-color: #45a049;
-}
-            </code></pre>
-            <p>この例では、ボタンにホバーした際に背景色がスムーズに変化します。</p>
-
-            <h3>10.2. アニメーション（Animation）</h3>
-            <p>アニメーションを使用すると、複数のステップを含む複雑な動きを要素に適用できます。</p>
-            <pre><code>
-/* アニメーションの例 */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    background-color: green; /* ホバー時の背景色 */
+}</code></pre>
+        <h3>アニメーション</h3>
+        <pre><code>@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
 }
 
-.fade-in-element {
-    animation: fadeIn 2s ease-in-out;
-}
-            </code></pre>
-            <p>この例では、要素が2秒かけて徐々にフェードインします。</p>
+.animated-box {
+    animation: example 5s infinite; /* 5秒でアニメーションを無限ループ */
+}</code></pre>
 
-            <h3>10.3. アニメーションの制御</h3>
-            <p>アニメーションの繰り返しや方向を制御するプロパティも利用できます。</p>
-            <pre><code>
-/* アニメーションの繰り返しと方向 */
-@keyframes slideIn {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(0); }
-}
-
-.slide-in-element {
-    animation: slideIn 1s forwards;
-}
-
-/* 繰り返しアニメーション */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-30px); }
-    60% { transform: translateY(-15px); }
-}
-
-.bounce-element {
-    animation: bounce 2s infinite;
-}
-            </code></pre>
-        </section>
-
-        <!-- CSSのユニット -->
-        <section id="units" class="content-section">
-            <h2>11. CSSのユニット</h2>
-            <p>CSSでは、さまざまな単位を使用してサイズやスペースを指定します。主なユニットは以下の通りです：</p>
-            <ul>
-                <li><strong>絶対単位:</strong> px（ピクセル）、cm（センチメートル）、mm（ミリメートル）、in（インチ）、pt（ポイント）、pc（パイカ）。例：<code>width: 100px;</code></li>
-                <li><strong>相対単位:</strong> em、rem、%、vw（ビューポート幅）、vh（ビューポート高さ）、vmin、vmax。例：<code>font-size: 1.5em;</code></li>
-            </ul>
-            <p>相対単位は、親要素やビューポートに基づいてサイズが変化するため、レスポンシブデザインに適しています。</p>
-            <pre><code>
-/* 相対単位の例 */
-.container {
-    width: 80%;
-    padding: 2em;
-}
-
-.text {
-    font-size: 1.2rem;
-}
-            </code></pre>
-        </section>
-
-        <!-- CSSのベンダープレフィックス -->
-        <section id="vendor-prefixes" class="content-section">
-            <h2>12. ベンダープレフィックス</h2>
-            <p>ベンダープレフィックスは、特定のブラウザで新しいCSS機能を実験的にサポートするために使用されます。主なプレフィックスは以下の通りです：</p>
-            <ul>
-                <li><strong>-webkit-:</strong> Chrome、SafariなどのWebKitベースのブラウザ用</li>
-                <li><strong>-moz-:</strong> Firefox用</li>
-                <li><strong>-ms-:</strong> Internet Explorer用</li>
-                <li><strong>-o-:</strong> Opera用</li>
-            </ul>
-            <p>現在、多くのCSSプロパティは標準化されており、プレフィックスなしでサポートされていますが、古いブラウザ向けにはプレフィックスが必要な場合があります。</p>
-            <pre><code>
-/* ベンダープレフィックスの例 */
-.element {
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-            </code></pre>
-        </section>
-
-        <!-- CSSフレームワークとプリプロセッサ -->
-        <section id="frameworks-preprocessors" class="content-section">
-            <h2>13. CSSフレームワークとプリプロセッサ</h2>
-            <p>CSSフレームワークとプリプロセッサは、スタイルの記述を効率化し、コードの再利用性を高めるためのツールです。</p>
-            <h3>13.1. CSSフレームワーク</h3>
-            <p>CSSフレームワークは、事前に定義されたスタイルとコンポーネントのセットを提供します。これにより、迅速に美しいデザインを構築できます。主なフレームワークは以下の通りです：</p>
-            <ul>
-                <li><strong>Bootstrap:</strong> 最も人気のあるフレームワークで、グリッドシステム、コンポーネント、JavaScriptプラグインが豊富。</li>
-                <li><strong>Foundation:</strong> 柔軟性が高く、カスタマイズ性に優れたフレームワーク。</li>
-                <li><strong>Tailwind CSS:</strong> ユーティリティファーストのフレームワークで、カスタマイズ性が高い。</li>
-            </ul>
-            <pre><code>
-/* Bootstrapを使用したボタンの例 */
-<button class="btn btn-primary">Primary Button</button>
-            </code></pre>
-
-            <h3>13.2. CSSプリプロセッサ</h3>
-            <p>CSSプリプロセッサは、CSSをより効率的に記述するための拡張言語です。主なプリプロセッサは以下の通りです：</p>
-            <ul>
-                <li><strong>Sass (Syntactically Awesome Stylesheets):</strong> 強力な機能を持ち、ネスト、変数、ミックスインなどをサポート。</li>
-                <li><strong>Less:</strong> JavaScriptで実装されたプリプロセッサで、変数やミックスインをサポート。</li>
-                <li><strong>Stylus:</strong> 柔軟な構文を持つプリプロセッサで、簡潔なコード記述が可能。</li>
-            </ul>
-            <pre><code>
-/* Sassの変数とネストの例 */
-$primary-color: #3498db;
-
-.navbar {
-    background-color: $primary-color;
-    ul {
-        list-style: none;
-        li {
-            display: inline-block;
-            a {
-                color: white;
-                text-decoration: none;
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
+        <h2>8. メディアクエリ</h2>
+        <p>レスポンシブデザインを実現するために、メディアクエリを使用して異なる画面サイズに対応するスタイルを設定できます。</p>
+        <pre><code>@media (max-width: 600px) {
+    body {
+        background-color: lightblue; /* スクリーン幅が600px以下の場合の背景色 */
     }
-}
-            </code></pre>
-        </section>
+}</code></pre>
 
-        <!-- CSSのベストプラクティス -->
-        <section id="best-practices" class="content-section">
-            <h2>14. CSSのベストプラクティス</h2>
-            <p>効率的で保守性の高いCSSを書くためのベストプラクティスを以下に示します：</p>
-            <ul>
-                <li><strong>クリーンで一貫性のあるコード:</strong> インデントや命名規則を統一し、可読性を高めます。</li>
-                <li><strong>再利用可能なクラス名:</strong> 汎用的なクラス名を使用して、コードの再利用性を高めます。</li>
-                <li><strong>CSSの最適化:</strong> 不要なスタイルや重複を避け、ファイルサイズを小さく保ちます。</li>
-                <li><strong>レスポンシブデザインの考慮:</strong> メディアクエリを活用して、さまざまなデバイスに対応します。</li>
-                <li><strong>コメントの活用:</strong> コード内にコメントを追加して、意図や機能を明確にします。</li>
-                <li><strong>CSSプリプロセッサの利用:</strong> SassやLessを使用して、コードの効率化と保守性を向上させます。</li>
-                <li><strong>グローバルスタイルの最小化:</strong> グローバルなスタイル設定を最小限に抑え、クラスやIDでスタイルを適用します。</li>
-            </ul>
-            <div class="example">
-                <h3>例: 再利用可能なクラス名の使用</h3>
-                <pre><code>
-/* 再利用可能なボタンクラス */
-.btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
+        <h2>9. CSSのリソース</h2>
+        <p>さらに学ぶためのリソースです。</p>
+        <ul>
+            <li><a href="https://www.w3schools.com/css/" target="_blank">W3Schools - CSS Tutorial</a></li>
+            <li><a href="https://developer.mozilla.org/ja/docs/Web/CSS" target="_blank">MDN Web Docs - CSS</a></li>
+            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+        </ul>
 
-/* 色別ボタンクラス */
-.btn-primary {
-    background-color: #3498db;
-    color: white;
-}
-
-.btn-secondary {
-    background-color: #2ecc71;
-    color: white;
-}
-                </code></pre>
-                <p>この例では、<code>.btn</code>クラスを基本として、色別のクラスを追加しています。これにより、ボタンのスタイルを簡単に再利用・変更できます。</p>
-            </div>
-        </section>
-
-        <!-- CSSのデバッグとツール -->
-        <section id="debugging-tools" class="content-section">
-            <h2>15. CSSのデバッグとツール</h2>
-            <p>CSSの開発とデバッグを効率化するためのツールとテクニックを紹介します。</p>
-            <ul>
-                <li><strong>ブラウザの開発者ツール:</strong> Chrome DevToolsやFirefox Developer Toolsを使用して、リアルタイムでスタイルを確認・修正します。</li>
-                <li><strong>CSSリントツール:</strong> StylelintやCSSLintを使用して、コードの品質と一貫性を保ちます。</li>
-                <li><strong>ビルドツール:</strong> WebpackやGulpを使用して、CSSのプリプロセッサや自動プレフィックスの設定を行います。</li>
-                <li><strong>フレームワーク:</strong> BootstrapやTailwind CSSなどのフレームワークを使用して、迅速にレスポンシブなデザインを構築します。</li>
-            </ul>
-            <div class="example">
-                <h3>例: Chrome DevToolsの使用方法</h3>
-                <p>Chrome DevToolsを使用すると、以下の操作が可能です：</p>
-                <ul>
-                    <li>要素のスタイルをリアルタイムで編集</li>
-                    <li>ボックスモデルを視覚的に確認</li>
-                    <li>レスポンシブデザインのテスト</li>
-                    <li>パフォーマンスの分析</li>
-                </ul>
-                <p>開発者ツールを開くには、ページ上で右クリックして「検証」を選択するか、<code>Ctrl + Shift + I</code>（Windows）または<code>Cmd + Option + I</code>（Mac）を押します。</p>
-            </div>
-        </section>
-
-        <!-- CSSの参考資料と学習リソース -->
-        <section id="resources" class="content-section">
-            <h2>16. CSSの参考資料と学習リソース</h2>
-            <p>CSSをさらに深く学ぶためのおすすめの資料とリソースを以下に紹介します：</p>
-            <ul>
-                <li><strong>公式ドキュメント:</strong> <a href="https://developer.mozilla.org/ja/docs/Web/CSS" target="_blank">MDN Web Docs - CSS</a></li>
-                <li><strong>オンラインチュートリアル:</strong> <a href="https://www.w3schools.com/css/" target="_blank">W3Schools - CSS Tutorial</a></li>
-                <li><strong>CSS-Tricks:</strong> <a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a> - 実践的なチュートリアルと記事が豊富。</li>
-                <li><strong>書籍:</strong> 
-                    <ul>
-                        <li><a href="https://example.com/html-css-book" target="_blank">「HTML & CSS: Design and Build Websites」 - Jon Duckett</a></li>
-                        <li><a href="https://example.com/javascript-book" target="_blank">「JavaScript: The Good Parts」 - Douglas Crockford</a></li>
-                    </ul>
-                </li>
-                <li><strong>オンラインコミュニティ:</strong> Stack OverflowやRedditのr/webdevなどで質問や情報交換ができます。</li>
-                <li><strong>CSSフレームワークの公式サイト:</strong> <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>、<a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></li>
-            </ul>
-        </section>
-
-        <!-- 実践プロジェクト -->
-        <section id="projects" class="content-section">
-            <h2>17. 実践プロジェクト</h2>
-            <p>CSSの理解を深めるために、実際のプロジェクトに取り組むことが重要です。以下は、実践的なプロジェクトのアイデアです：</p>
-            <ul>
-                <li><strong>個人ポートフォリオサイト:</strong> 自分のスキルやプロジェクトを紹介するウェブサイトを作成。</li>
-                <li><strong>ブログレイアウト:</strong> シンプルなブログのデザインとレイアウトを構築。</li>
-                <li><strong>ランディングページ:</strong> 製品やサービスのプロモーション用のランディングページをデザイン。</li>
-                <li><strong>レスポンシブナビゲーションメニュー:</strong> スマートフォンでも使いやすいナビゲーションメニューを作成。</li>
-                <li><strong>CSSアニメーション:</strong> クリックやホバー時に動くインタラクティブな要素を追加。</li>
-            </ul>
-            <div class="example">
-                <h3>例: 個人ポートフォリオサイト</h3>
-                <p>以下は、個人ポートフォリオサイトの基本的なレイアウト例です：</p>
-                <pre><code>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>ポートフォリオ - Rui</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .portfolio-header {
-            background-color: #333;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .portfolio-section {
-            padding: 20px;
-            margin: 20px 0;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-        }
-        .portfolio-item {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-        .portfolio-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            flex: 1 1 200px;
-            margin-right: 20px;
-        }
-        .portfolio-item .description {
-            flex: 2 1 300px;
-        }
-    </style>
-</head>
-<body>
-    <header class="portfolio-header">
-        <h1>Ruiのポートフォリオ</h1>
-        <p>私のプロジェクトとスキルを紹介します。</p>
-    </header>
-    <main>
-        <section class="portfolio-section">
-            <h2>プロジェクト1: ウェブサイトデザイン</h2>
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/300" alt="プロジェクト1">
-                <div class="description">
-                    <p>このプロジェクトでは、HTMLとCSSを使用してレスポンシブなウェブサイトをデザインしました。FlexboxとGridを活用して、モダンでユーザーフレンドリーなレイアウトを実現しました。</p>
-                </div>
-            </div>
-        </section>
-        <section class="portfolio-section">
-            <h2>プロジェクト2: アニメーションウェブページ</h2>
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/300" alt="プロジェクト2">
-                <div class="description">
-                    <p>CSSアニメーションを使用して、インタラクティブなウェブページを作成しました。ホバー時のエフェクトや自動再生アニメーションを取り入れ、視覚的に魅力的なデザインに仕上げました。</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Rui. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-                </code></pre>
-                <p>この例では、ポートフォリオセクションにプロジェクトの画像と説明を横並びで表示しています。Flexboxを使用してレイアウトを整えています。</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-links">
-            <a href="terms.html">利用規約</a>
-            <a href="privacy.html">プライバシーポリシー</a>
-            <a href="contact.html">お問い合わせ</a>
-        </div>
-        <p>© 2024 Rui. All rights reserved.</p>
-    </footer>
+        <h2>10. まとめ</h2>
+        <p>CSSはウェブデザインの基盤です。基本を学び、実際にコードを書いてみることで理解が深まります。ぜひ、色々なスタイルを試して、自分のウェブサイトをカスタマイズしてみてください。</p>
+    </div>
 </body>
 </html>
