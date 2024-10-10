@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー</title>
+  <style>
+    body {
+      background-color: #ffffff; /* 背景色を白に設定 */
+      color: #000000; /* テキストカラーを黒に設定 */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: center; /* 中央寄せ */
+      padding: 10px 20px;
+      background-color: #ffffff; /* ヘッダー背景も白 */
+      border-bottom: 1px solid #ccc; /* 薄いボーダーで区切り */
+    }
+    main {
+      padding: 20px;
+    }
+    footer {
+      background-color: #ffffff; /* フッターも白に設定 */
+      color: #000000;
+      text-align: center;
+      padding: 10px;
+      border-top: 1px solid #ccc; /* 薄いボーダーで区切り */
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <!-- ナビゲーションのリンクを消去したバージョン -->
+    </nav>
+  </header>
+
+  <main>
+    <h1>プライバシーポリシー</h1>
+    <p>本プライバシーポリシーでは、当ウェブサイトにおける個人情報の取扱いについてご説明いたします。</p>
+
+    <h2>1. 個人情報の収集</h2>
+    <p>本ウェブサイトでは、ユーザーが入力した情報や、クッキーなどの技術を使用して収集される情報を元に、個人情報を収集します。</p>
+
+    <h2>2. 個人情報の利用目的</h2>
+    <p>収集した個人情報は、主に以下の目的で利用します:</p>
+    <ul>
+      <li>ユーザーサポートやお問い合わせ対応</li>
+      <li>ウェブサイトの改善や最適化</li>
+      <li>マーケティング活動のための分析</li>
+    </ul>
+
+    <h2>3. 第三者への提供</h2>
+    <p>個人情報は、ユーザーの同意なく第三者に提供することはありません。ただし、法律の要求に従う場合など、特定の状況下では例外があります。</p>
+
+    <h2>4. セキュリティ対策</h2>
+    <p>個人情報を保護するために、適切なセキュリティ対策を実施しています。不正アクセスや情報の漏えいを防ぐため、最新の技術を使用します。</p>
+
+    <h2>5. クッキーの利用</h2>
+    <p>当ウェブサイトでは、ユーザーの利便性向上のためにクッキーを使用しています。クッキーにより、ウェブサイトの使用状況を把握し、サービスの改善に役立てています。</p>
+
+    <h2>6. プライバシーポリシーの改訂</h2>
+    <p>本プライバシーポリシーは、必要に応じて改訂されることがあります。最新の情報は常にこのページでご確認ください。</p>
+
+  </main>
+
+  <footer>
+   
+  </footer>
+</body>
+</html>
