@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>利用規約ページ</title>
+  <style>
+    body {
+      background-color: #ffffff; /* 背景色を白に設定 */
+      color: #000000; /* テキストカラーを黒に設定 */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      display: flex;
+      justify-content: center; /* 中央寄せ */
+      padding: 10px 20px;
+      background-color: #ffffff; /* ヘッダー背景も白 */
+      border-bottom: 1px solid #ccc; /* 薄いボーダーで区切り */
+    }
+    main {
+      padding: 20px;
+    }
+    footer {
+      background-color: #ffffff; /* フッターも白に設定 */
+      color: #000000;
+      text-align: center;
+      padding: 10px;
+      border-top: 1px solid #ccc; /* 薄いボーダーで区切り */
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <!-- ナビゲーションのリンクを消去したバージョン -->
+    </nav>
+  </header>
+
+  <main>
+    <h1>利用規約</h1>
+    <p>本ウェブサイトは、以下の利用規約に従ってご利用いただきます。</p>
+
+    <h2>1. 免責事項</h2>
+    <p>本ウェブサイトの内容に関して、可能な限り正確な情報を提供しておりますが、誤りが含まれる可能性があります。ご利用に関しては、ご自身の責任でお願いいたします。</p>
+
+    <h2>2. 著作権</h2>
+    <p>本サイトのコンテンツは著作権法に基づき保護されております。無断での転載・複製は固く禁じられております。</p>
+
+    <h2>3. プライバシー</h2>
+    <p>本ウェブサイトを通じて収集される個人情報は、プライバシーポリシーに基づいて適切に管理されます。</p>
+
+    <h2>4. 改訂</h2>
+    <p>本利用規約は予告なく変更される場合があります。最新の利用規約はこのページでご確認ください。</p>
+  </main>
+
+  <footer>
+  
+  </footer>
+</body>
+</html>
